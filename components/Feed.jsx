@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import PromptCard from './PromptCard'
+import Image from "next/image";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
@@ -83,7 +84,12 @@ const Feed = () => {
       </form>
 
       {loading ? (
-        <p>Loading...</p>
+        <Image 
+        src='/assets/icons/loader.svg'
+        width={100}
+        height={100}
+        className='mt-20'
+      />
       ) : (
         <PromptCardList
           data={searchText ? searchedResults : allPosts}
